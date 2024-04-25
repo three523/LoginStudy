@@ -1,0 +1,6 @@
+module Pods_LoginStudy {
+  umbrella header "Pods-LoginStudy-umbrella.h"
+
+  export *
+  module * { export * }
+}

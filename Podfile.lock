@@ -1,0 +1,54 @@
+PODS:
+  - Alamofire (5.8.1)
+  - KakaoSDKAuth (2.20.0):
+    - KakaoSDKCommon (= 2.20.0)
+  - KakaoSDKCert (2.20.0):
+    - KakaoSDKCertCore (= 2.20.0)
+    - KakaoSDKUser (= 2.20.0)
+  - KakaoSDKCertCore (2.20.0)
+  - KakaoSDKCommon (2.20.0):
+    - KakaoSDKCommon/Common (= 2.20.0)
+    - KakaoSDKCommon/Network (= 2.20.0)
+  - KakaoSDKCommon/Common (2.20.0)
+  - KakaoSDKCommon/Network (2.20.0):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.20.0)
+  - KakaoSDKTalk (2.20.0):
+    - KakaoSDKTemplate (= 2.20.0)
+    - KakaoSDKUser (= 2.20.0)
+  - KakaoSDKTemplate (2.20.0):
+    - KakaoSDKCommon/Common (= 2.20.0)
+  - KakaoSDKUser (2.20.0):
+    - KakaoSDKAuth (= 2.20.0)
+
+DEPENDENCIES:
+  - KakaoSDKAuth
+  - KakaoSDKCert
+  - KakaoSDKCommon
+  - KakaoSDKTalk
+  - KakaoSDKUser
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - KakaoSDKAuth
+    - KakaoSDKCert
+    - KakaoSDKCertCore
+    - KakaoSDKCommon
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
+
+SPEC CHECKSUMS:
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  KakaoSDKAuth: 02742f4681af6da8c4aa7b0f71df98ca9e7df834
+  KakaoSDKCert: 0b27ec4edbc9e5ee689ae568ac5be6956b96ce4d
+  KakaoSDKCertCore: 5ebd4da00140178b4fb7ad30c317cfe5fe8c02ba
+  KakaoSDKCommon: 060a8085733a215a048f9bf9b39a846d1be1daee
+  KakaoSDKTalk: 245db634d63f8a21e8b80bcfe5ca1aff407b1018
+  KakaoSDKTemplate: d0481c3d8a7e74646a585fc0e551fc18f7fdc6ac
+  KakaoSDKUser: 0594b37675fb634304da3ecc83830c0ec84ceef5
+
+PODFILE CHECKSUM: cab57cd55a549c91bb5ada2ecbbaf1b31248dfb8
+
+COCOAPODS: 1.11.3

@@ -12,14 +12,13 @@
         <!--Home View Controller-->
         <scene sceneID="rtI-Au-Scd">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="rHM-UH-MzR" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="rHM-UH-MzR" customClass="HomeViewController" customModule="LoginStudy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QNV-Wt-PXC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-jk-Eov">
-                                <rect key="frame" x="155" y="409" width="83" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-jk-Eov">
+                                <rect key="frame" x="155" y="409" width="83" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="시작하기"/>
                                 <connections>
@@ -29,6 +28,11 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GLj-vl-7RE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zlZ-jk-Eov" firstAttribute="top" secondItem="GLj-vl-7RE" secondAttribute="top" constant="350" id="BoH-0A-vIh"/>
+                            <constraint firstItem="zlZ-jk-Eov" firstAttribute="centerY" secondItem="QNV-Wt-PXC" secondAttribute="centerY" id="luA-S0-aFK"/>
+                            <constraint firstItem="zlZ-jk-Eov" firstAttribute="centerX" secondItem="QNV-Wt-PXC" secondAttribute="centerX" id="r0l-Ws-Tiw"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NXu-fd-1rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
