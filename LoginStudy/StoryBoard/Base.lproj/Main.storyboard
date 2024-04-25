@@ -62,6 +62,9 @@
                                         <rect key="frame" x="0.0" y="42.333333333333371" width="146" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="네이버로 시작하기"/>
+                                        <connections>
+                                            <action selector="loginWithNaver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPw-86-X1J"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7u-Pe-rMe">
                                         <rect key="frame" x="0.0" y="84.666666666666686" width="146" height="34.333333333333343"/>
@@ -98,6 +101,7 @@
                         <outlet property="loginButton" destination="FmH-An-zwg" id="WVz-jz-LlT"/>
                         <outlet property="loginStackView" destination="nGw-kv-17w" id="vQx-vY-WtY"/>
                         <outlet property="logoutButton" destination="f7u-Pe-rMe" id="FXB-4k-Lxw"/>
+                        <outlet property="naverLoginButton" destination="Q2H-GH-Ash" id="JdX-K1-s1P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -4,7 +4,8 @@
 <dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>kakaokompassauth</string>
+		<string>naversearchapp</string>
+		<string>naversearchthirdlogin</string>
 	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
@@ -14,6 +15,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>kakaoa728f92d905deb3da2ecf5d1a9fccf16</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>loginstudy</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>loginstudy</string>
 			</array>
 		</dict>
 	</array>

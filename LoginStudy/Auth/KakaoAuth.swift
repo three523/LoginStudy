@@ -16,12 +16,12 @@ final class KakaoAuth: Auth {
         self.nextAuth = auth
     }
     
-    func login(_ authType: AuthType, completion: ((Result<Bool,LoginError>) -> Void)?) {
+    func login(_ authType: AuthType, completion: @escaping (Result<Bool,LoginError>) -> Void) {
         if authType != .kakao {
             if let nextAuth {
                 nextAuth.login(authType, completion: completion)
             } else {
-                completion?(.failure(.unknown))
+                completion(.failure(.unknown))
             }
             return
         }
@@ -29,7 +29,11 @@ final class KakaoAuth: Auth {
     }
     
     func logout() {
-        logoutWithKakao()
+        if AuthApi.hasToken() {
+            logoutWithKakao()
+        } else {
+            nextAuth?.logout()
+        }
     }
     
     func fetchEmail(completion: ((Result<String,LoginError>) -> Void)?) {

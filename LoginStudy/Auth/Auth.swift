@@ -7,7 +7,7 @@
 
 protocol Auth {
     var nextAuth: Auth? { get set }
-    func login(_ authType: AuthType, completion: ((Result<Bool,LoginError>) -> Void)?)
+    func login(_ authType: AuthType, completion: @escaping (Result<Bool,LoginError>) -> Void)
     func logout()
     func fetchEmail(completion: ((Result<String,LoginError>) -> Void)?)
     func fetchLoginState() -> Bool

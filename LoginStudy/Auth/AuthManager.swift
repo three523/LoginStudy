@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class AuthManager {
     private let auth: Auth
@@ -19,7 +20,7 @@ final class AuthManager {
     var updateLoginView: ((Bool) -> Void)?
     
     init() {
-        self.auth = KakaoAuth(auth: nil)
+        self.auth = KakaoAuth(auth: NaverAuth(auth: nil))
     }
     
     func login(_ authType: AuthType, completion: ((Result<Bool,LoginError>) -> Void)?) {

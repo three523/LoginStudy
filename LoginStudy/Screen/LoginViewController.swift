@@ -6,54 +6,63 @@
 //
 
 import UIKit
-import KakaoSDKAuth
-import KakaoSDKCommon
-import KakaoSDKUser
+import NaverThirdPartyLogin
 
 final class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginStackView: UIStackView!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var naverLoginButton: UIButton!
     @IBOutlet weak var deleteAccountButton: UIButton!
     
     private let authManager: AuthManager = AuthManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateFrom(isLogin: authManager.fetchLoginState())
+        updateButtonHidden(isLogin: authManager.fetchLoginState())
     }
     
     @IBAction func login(_ sender: Any) {
-        authManager.login(.kakao) { result in
-            switch result {
-            case .success(_):
-                self.updateFrom(isLogin: true)
-            case .failure(let error):
-                print(error.message)
-                self.updateFrom(isLogin: false)
-            }
-        }
+        authManager.login(.kakao, completion: updateForm)
+    }
+    @IBAction func loginWithNaver(_ sender: Any) {
+        authManager.login(.naver, completion: updateForm)
     }
     @IBAction func logout(_ sender: Any) {
         authManager.logout()
-        updateFrom(isLogin: false)
+        updateButtonHidden(isLogin: false)
     }
     @IBAction func deleteAccount(_ sender: Any) {
         authManager.deleteAccount { success in
             if success {
-                self.updateFrom(isLogin: false)
+                self.updateButtonHidden(isLogin: false)
             } else {
-                let alertVC = UIAlertController(title: "계정 삭제에 실패하였습니다.", message: nil, preferredStyle: .alert)
-                self.present(alertVC, animated: true)
+                DispatchQueue.main.async {
+                    let alertVC = UIAlertController(title: "계정 삭제에 실패하였습니다.", message: nil, preferredStyle: .alert)
+                    self.present(alertVC, animated: true)
+                }
             }
         }
     }
     
-    private func updateFrom(isLogin: Bool) {
-        loginButton.isHidden = isLogin
-        logoutButton.isHidden = !isLogin
-        deleteAccountButton.isHidden = !isLogin
+    private func updateForm(result: Result<Bool, LoginError>) {
+        switch result {
+        case .success(_):
+            self.updateButtonHidden(isLogin: true)
+        case .failure(let error):
+            print(error.message)
+            self.updateButtonHidden(isLogin: false)
+        }
+    }
+    
+    private func updateButtonHidden(isLogin: Bool) {
+        DispatchQueue.main.async {
+            self.loginButton.isHidden = isLogin
+            self.naverLoginButton.isHidden = isLogin
+            self.logoutButton.isHidden = !isLogin
+            self.deleteAccountButton.isHidden = !isLogin
+        }
     }
     
     private func presentErrorAlert(error: Error) {
