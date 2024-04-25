@@ -9,6 +9,6 @@ pod 'KakaoSDKUser'  # 카카오 로그인, 사용자 관리
 pod 'KakaoSDKTalk'  # 친구, 메시지(카카오톡)
 pod 'KakaoSDKCert' # 카카오톡 인증 서비스
 pod 'naveridlogin-sdk-ios'
-
+pod 'GoogleSignIn'
 
 end

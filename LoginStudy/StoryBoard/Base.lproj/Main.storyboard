@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nGw-kv-17w">
-                                <rect key="frame" x="123.66666666666669" y="345.33333333333331" width="146" height="161.33333333333331"/>
+                                <rect key="frame" x="123.66666666666669" y="324.33333333333331" width="146" height="203.66666666666669"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmH-An-zwg">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="34.333333333333336"/>
@@ -66,8 +66,16 @@
                                             <action selector="loginWithNaver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPw-86-X1J"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7u-Pe-rMe">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljA-KX-C0z">
                                         <rect key="frame" x="0.0" y="84.666666666666686" width="146" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="구글로 시작하기"/>
+                                        <connections>
+                                            <action selector="loginWithGoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hQf-7e-ApW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7u-Pe-rMe">
+                                        <rect key="frame" x="0.0" y="126.99999999999999" width="146" height="34.333333333333329"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
                                         <connections>
@@ -75,7 +83,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilY-xB-xj7">
-                                        <rect key="frame" x="0.0" y="126.99999999999999" width="146" height="34.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="169.33333333333337" width="146" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="회원탈퇴">
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
@@ -98,6 +106,7 @@
                     <navigationItem key="navigationItem" id="WjI-Qr-GfL"/>
                     <connections>
                         <outlet property="deleteAccountButton" destination="ilY-xB-xj7" id="vuh-Ca-E9G"/>
+                        <outlet property="googleLoginButton" destination="ljA-KX-C0z" id="3db-Jr-uFZ"/>
                         <outlet property="loginButton" destination="FmH-An-zwg" id="WVz-jz-LlT"/>
                         <outlet property="loginStackView" destination="nGw-kv-17w" id="vQx-vY-WtY"/>
                         <outlet property="logoutButton" destination="f7u-Pe-rMe" id="FXB-4k-Lxw"/>

@@ -8,4 +8,6 @@
 enum AuthType {
     case kakao
     case naver
+    case google
+    case apple
 }

@@ -6,7 +6,6 @@
 //
 
 import NaverThirdPartyLogin
-import Alamofire
 
 final class NaverAuth: NSObject, Auth {
     var nextAuth: Auth?
@@ -20,19 +19,36 @@ final class NaverAuth: NSObject, Auth {
     }
     
     func login(_ authType: AuthType, completion: @escaping (Result<Bool, LoginError>) -> Void) {
+        if authType != .naver {
+            nextAuth?.login(authType, completion: completion)
+            return
+        }
         loginInstance?.requestThirdPartyLogin()
         self.completedLogin = completion
     }
     
     func logout() {
-        loginInstance?.requestDeleteToken()
+        if loginInstance?.accessToken == nil {
+            nextAuth?.logout()
+        } else {
+            loginInstance?.requestDeleteToken()
+        }
     }
     
     func fetchEmail(completion: ((Result<String, LoginError>) -> Void)?) {
-        guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow(),
-              let tokenType = loginInstance?.tokenType,
-              let accessToken = loginInstance?.accessToken,
+        guard let loginInstance else {
+            completion?(.failure(.unknown))
+            return
+        }
+        if loginInstance.accessToken == nil {
+            nextAuth?.fetchEmail(completion: completion)
+            return
+        }
+        guard loginInstance.isValidAccessTokenExpireTimeNow(),
+              let tokenType = loginInstance.tokenType,
+              let accessToken = loginInstance.accessToken,
             let url = URL(string: "https://openapi.naver.com/v1/nid/me") else {
+            loginInstance.requestAccessTokenWithRefreshToken()
             return
         }
         
@@ -67,8 +83,13 @@ final class NaverAuth: NSObject, Auth {
     }
     
     func fetchLoginState() -> Bool {
+        if loginInstance?.accessToken == nil {
+            guard let nextAuth else { return false }
+            return nextAuth.fetchLoginState()
+        }
         guard let isValidAccessToken = loginInstance?.isValidAccessTokenExpireTimeNow() else {
-            return false
+            loginInstance?.requestAccessTokenWithRefreshToken()
+            return true
         }
         return isValidAccessToken
     }
@@ -79,10 +100,11 @@ extension NaverAuth: NaverThirdPartyLoginConnectionDelegate {
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
         print("success naver")
         completedLogin?(.success(true))
+        completedLogin = nil
     }
     
     func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-        print()
+        print("refresh token")
     }
     
     func oauth20ConnectionDidFinishDeleteToken() {

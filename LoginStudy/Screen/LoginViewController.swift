@@ -14,9 +14,10 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var naverLoginButton: UIButton!
+    @IBOutlet weak var googleLoginButton: UIButton!
     @IBOutlet weak var deleteAccountButton: UIButton!
     
-    private let authManager: AuthManager = AuthManager()
+    private lazy var authManager: AuthManager = AuthManager(presenting: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,9 @@ final class LoginViewController: UIViewController {
     }
     @IBAction func loginWithNaver(_ sender: Any) {
         authManager.login(.naver, completion: updateForm)
+    }
+    @IBAction func loginWithGoogle(_ sender: Any) {
+        authManager.login(.google, completion: updateForm)
     }
     @IBAction func logout(_ sender: Any) {
         authManager.logout()
@@ -60,6 +64,7 @@ final class LoginViewController: UIViewController {
         DispatchQueue.main.async {
             self.loginButton.isHidden = isLogin
             self.naverLoginButton.isHidden = isLogin
+            self.googleLoginButton.isHidden = isLogin
             self.logoutButton.isHidden = !isLogin
             self.deleteAccountButton.isHidden = !isLogin
         }

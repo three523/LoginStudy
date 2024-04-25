@@ -15,6 +15,8 @@
 		18DBB0A12BDA3BE500C52394 /* KakaoAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0A02BDA3BE500C52394 /* KakaoAuth.swift */; };
 		18DBB0A32BDA4ADA00C52394 /* NaverAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0A22BDA4ADA00C52394 /* NaverAuth.swift */; };
 		18DBB0A92BDA63C300C52394 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0A82BDA63C300C52394 /* Secret.swift */; };
+		18DBB0AB2BDA92F100C52394 /* GoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0AA2BDA92F100C52394 /* GoogleAuth.swift */; };
+		18DBB0AD2BDA9A5900C52394 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0AC2BDA9A5900C52394 /* credentials.plist */; };
 		18E33B1B2BD892C100296E38 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B192BD892C000296E38 /* Model.xcdatamodeld */; };
 		18E33B1D2BD8937B00296E38 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B1C2BD8937B00296E38 /* UserRepository.swift */; };
 		18E33B212BD89A5700296E38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B202BD89A5700296E38 /* HomeViewController.swift */; };
@@ -34,6 +36,8 @@
 		18DBB0A02BDA3BE500C52394 /* KakaoAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
 		18DBB0A22BDA4ADA00C52394 /* NaverAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAuth.swift; sourceTree = "<group>"; };
 		18DBB0A82BDA63C300C52394 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		18DBB0AA2BDA92F100C52394 /* GoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
+		18DBB0AC2BDA9A5900C52394 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		18E33B1A2BD892C100296E38 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18E33B1C2BD8937B00296E38 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		18E33B202BD89A5700296E38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 				18DBB09A2BDA3A4900C52394 /* Auth.swift */,
 				18DBB09C2BDA3A7F00C52394 /* AuthType.swift */,
 				18DBB09E2BDA3B9200C52394 /* AuthManager.swift */,
+				18DBB0AA2BDA92F100C52394 /* GoogleAuth.swift */,
 				18DBB0A02BDA3BE500C52394 /* KakaoAuth.swift */,
 				18DBB0A22BDA4ADA00C52394 /* NaverAuth.swift */,
 			);
@@ -122,6 +127,7 @@
 				18E33B192BD892C000296E38 /* Model.xcdatamodeld */,
 				18FF96EE2BD60B77008F0CE4 /* Assets.xcassets */,
 				18FF96F02BD60B77008F0CE4 /* LaunchScreen.storyboard */,
+				18DBB0AC2BDA9A5900C52394 /* credentials.plist */,
 				18FF96F32BD60B77008F0CE4 /* Info.plist */,
 				18DBB0A82BDA63C300C52394 /* Secret.swift */,
 			);
@@ -157,6 +163,7 @@
 				18FF96DF2BD60B74008F0CE4 /* Frameworks */,
 				18FF96E02BD60B74008F0CE4 /* Resources */,
 				93F5D4620F82417E10AA9FC4 /* [CP] Embed Pods Frameworks */,
+				FDF23354E1DC684B243DA784 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,6 +215,7 @@
 				18FF96F22BD60B77008F0CE4 /* LaunchScreen.storyboard in Resources */,
 				18FF96EF2BD60B77008F0CE4 /* Assets.xcassets in Resources */,
 				18FF96ED2BD60B74008F0CE4 /* Main.storyboard in Resources */,
+				18DBB0AD2BDA9A5900C52394 /* credentials.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +261,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoginStudy/Pods-LoginStudy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FDF23354E1DC684B243DA784 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoginStudy/Pods-LoginStudy-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoginStudy/Pods-LoginStudy-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoginStudy/Pods-LoginStudy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -264,6 +289,7 @@
 				18FF96EA2BD60B74008F0CE4 /* LoginViewController.swift in Sources */,
 				18FF96E62BD60B74008F0CE4 /* AppDelegate.swift in Sources */,
 				18FF96E82BD60B74008F0CE4 /* SceneDelegate.swift in Sources */,
+				18DBB0AB2BDA92F100C52394 /* GoogleAuth.swift in Sources */,
 				18DBB0A32BDA4ADA00C52394 /* NaverAuth.swift in Sources */,
 				18E33B1D2BD8937B00296E38 /* UserRepository.swift in Sources */,
 				18E33B1B2BD892C100296E38 /* Model.xcdatamodeld in Sources */,
