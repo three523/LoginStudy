@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		057852BED9E685AD28C8AB11 /* libPods-LoginStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91475CA898511D0419364985 /* libPods-LoginStudy.a */; };
 		18DBB0982BDA2EB500C52394 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0972BDA2EB500C52394 /* LoginError.swift */; };
+		18DBB09B2BDA3A4900C52394 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB09A2BDA3A4900C52394 /* Auth.swift */; };
+		18DBB09D2BDA3A7F00C52394 /* AuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB09C2BDA3A7F00C52394 /* AuthType.swift */; };
+		18DBB09F2BDA3B9200C52394 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB09E2BDA3B9200C52394 /* AuthManager.swift */; };
+		18DBB0A12BDA3BE500C52394 /* KakaoAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0A02BDA3BE500C52394 /* KakaoAuth.swift */; };
+		18DBB0A32BDA4ADA00C52394 /* NaverAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0A22BDA4ADA00C52394 /* NaverAuth.swift */; };
 		18E33B1B2BD892C100296E38 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B192BD892C000296E38 /* Model.xcdatamodeld */; };
 		18E33B1D2BD8937B00296E38 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B1C2BD8937B00296E38 /* UserRepository.swift */; };
 		18E33B212BD89A5700296E38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B202BD89A5700296E38 /* HomeViewController.swift */; };
@@ -22,6 +27,11 @@
 
 /* Begin PBXFileReference section */
 		18DBB0972BDA2EB500C52394 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
+		18DBB09A2BDA3A4900C52394 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		18DBB09C2BDA3A7F00C52394 /* AuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthType.swift; sourceTree = "<group>"; };
+		18DBB09E2BDA3B9200C52394 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		18DBB0A02BDA3BE500C52394 /* KakaoAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
+		18DBB0A22BDA4ADA00C52394 /* NaverAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAuth.swift; sourceTree = "<group>"; };
 		18E33B1A2BD892C100296E38 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18E33B1C2BD8937B00296E38 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		18E33B202BD89A5700296E38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +77,18 @@
 			path = StoryBoard;
 			sourceTree = "<group>";
 		};
+		18DBB0992BDA3A4100C52394 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB09A2BDA3A4900C52394 /* Auth.swift */,
+				18DBB09C2BDA3A7F00C52394 /* AuthType.swift */,
+				18DBB09E2BDA3B9200C52394 /* AuthManager.swift */,
+				18DBB0A02BDA3BE500C52394 /* KakaoAuth.swift */,
+				18DBB0A22BDA4ADA00C52394 /* NaverAuth.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		18FF96D92BD60B74008F0CE4 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +110,7 @@
 		18FF96E42BD60B74008F0CE4 /* LoginStudy */ = {
 			isa = PBXGroup;
 			children = (
+				18DBB0992BDA3A4100C52394 /* Auth */,
 				18DBB0922BD9FABB00C52394 /* StoryBoard */,
 				18DBB0912BD9FA7800C52394 /* Screen */,
 				18FF96E52BD60B74008F0CE4 /* AppDelegate.swift */,
@@ -216,13 +239,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DBB0A12BDA3BE500C52394 /* KakaoAuth.swift in Sources */,
 				18FF96EA2BD60B74008F0CE4 /* LoginViewController.swift in Sources */,
 				18FF96E62BD60B74008F0CE4 /* AppDelegate.swift in Sources */,
 				18FF96E82BD60B74008F0CE4 /* SceneDelegate.swift in Sources */,
+				18DBB0A32BDA4ADA00C52394 /* NaverAuth.swift in Sources */,
 				18E33B1D2BD8937B00296E38 /* UserRepository.swift in Sources */,
 				18E33B1B2BD892C100296E38 /* Model.xcdatamodeld in Sources */,
 				18E33B212BD89A5700296E38 /* HomeViewController.swift in Sources */,
+				18DBB09D2BDA3A7F00C52394 /* AuthType.swift in Sources */,
 				18DBB0982BDA2EB500C52394 /* LoginError.swift in Sources */,
+				18DBB09B2BDA3A4900C52394 /* Auth.swift in Sources */,
+				18DBB09F2BDA3B9200C52394 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
