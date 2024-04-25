@@ -1,0 +1,1 @@
+../../../KakaoSDKCert/Sources/KakaoSDKCert/KakaoSDKCert.h

@@ -12,14 +12,13 @@
         <!--Home View Controller-->
         <scene sceneID="rtI-Au-Scd">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="rHM-UH-MzR" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="rHM-UH-MzR" customClass="HomeViewController" customModule="LoginStudy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QNV-Wt-PXC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-jk-Eov">
-                                <rect key="frame" x="155" y="409" width="83" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-jk-Eov">
+                                <rect key="frame" x="155" y="409" width="83" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="시작하기"/>
                                 <connections>
@@ -29,6 +28,11 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GLj-vl-7RE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zlZ-jk-Eov" firstAttribute="top" secondItem="GLj-vl-7RE" secondAttribute="top" constant="350" id="BoH-0A-vIh"/>
+                            <constraint firstItem="zlZ-jk-Eov" firstAttribute="centerY" secondItem="QNV-Wt-PXC" secondAttribute="centerY" id="luA-S0-aFK"/>
+                            <constraint firstItem="zlZ-jk-Eov" firstAttribute="centerX" secondItem="QNV-Wt-PXC" secondAttribute="centerX" id="r0l-Ws-Tiw"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NXu-fd-1rc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -75,18 +79,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="nMx-FQ-BEs">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nMx-FQ-BEs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="081-ru-SC0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nMx-FQ-BEs" secondAttribute="bottom" id="3lA-XS-Kqn"/>
                             <constraint firstItem="nGw-kv-17w" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DOU-kc-jBz"/>
+                            <constraint firstItem="nMx-FQ-BEs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ob3-4F-s6T"/>
+                            <constraint firstItem="nMx-FQ-BEs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Zgf-Lu-Omd"/>
                             <constraint firstItem="nGw-kv-17w" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hL9-9g-ssv"/>
+                            <constraint firstItem="nMx-FQ-BEs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tQb-cq-jK8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nMx-FQ-BEs" secondAttribute="trailing" id="v0d-o6-0Sz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WjI-Qr-GfL"/>
                     <connections>
                         <outlet property="deleteAccountButton" destination="ilY-xB-xj7" id="vuh-Ca-E9G"/>
+                        <outlet property="indicator" destination="nMx-FQ-BEs" id="sUH-b0-AXy"/>
                         <outlet property="loginButton" destination="FmH-An-zwg" id="WVz-jz-LlT"/>
+                        <outlet property="loginStackView" destination="nGw-kv-17w" id="vQx-vY-WtY"/>
                         <outlet property="logoutButton" destination="f7u-Pe-rMe" id="FXB-4k-Lxw"/>
                     </connections>
                 </viewController>

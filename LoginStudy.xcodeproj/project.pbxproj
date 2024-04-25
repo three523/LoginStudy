@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		057852BED9E685AD28C8AB11 /* libPods-LoginStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91475CA898511D0419364985 /* libPods-LoginStudy.a */; };
+		18DBB0982BDA2EB500C52394 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0972BDA2EB500C52394 /* LoginError.swift */; };
 		18E33B1B2BD892C100296E38 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B192BD892C000296E38 /* Model.xcdatamodeld */; };
 		18E33B1D2BD8937B00296E38 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B1C2BD8937B00296E38 /* UserRepository.swift */; };
 		18E33B212BD89A5700296E38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B202BD89A5700296E38 /* HomeViewController.swift */; };
@@ -19,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18DBB0972BDA2EB500C52394 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		18E33B1A2BD892C100296E38 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18E33B1C2BD8937B00296E38 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		18E33B202BD89A5700296E38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +33,9 @@
 		18FF96EE2BD60B77008F0CE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18FF96F12BD60B77008F0CE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18FF96F32BD60B77008F0CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91475CA898511D0419364985 /* libPods-LoginStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoginStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA97AC8A0DE30C8B526D0AC7 /* Pods-LoginStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginStudy.release.xcconfig"; path = "Target Support Files/Pods-LoginStudy/Pods-LoginStudy.release.xcconfig"; sourceTree = "<group>"; };
+		C1063A75B0A232D91CC092C6 /* Pods-LoginStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginStudy.debug.xcconfig"; path = "Target Support Files/Pods-LoginStudy/Pods-LoginStudy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057852BED9E685AD28C8AB11 /* libPods-LoginStudy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18DBB0912BD9FA7800C52394 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				18E33B202BD89A5700296E38 /* HomeViewController.swift */,
+				18FF96E92BD60B74008F0CE4 /* LoginViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		18DBB0922BD9FABB00C52394 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				18FF96EB2BD60B74008F0CE4 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
 		18FF96D92BD60B74008F0CE4 = {
 			isa = PBXGroup;
 			children = (
 				18FF96E42BD60B74008F0CE4 /* LoginStudy */,
 				18FF96E32BD60B74008F0CE4 /* Products */,
+				B5FAF75935F521E610B4275A /* Pods */,
+				930DC0EC88E8816D81F80299 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +88,35 @@
 		18FF96E42BD60B74008F0CE4 /* LoginStudy */ = {
 			isa = PBXGroup;
 			children = (
+				18DBB0922BD9FABB00C52394 /* StoryBoard */,
+				18DBB0912BD9FA7800C52394 /* Screen */,
 				18FF96E52BD60B74008F0CE4 /* AppDelegate.swift */,
 				18FF96E72BD60B74008F0CE4 /* SceneDelegate.swift */,
-				18E33B202BD89A5700296E38 /* HomeViewController.swift */,
-				18FF96E92BD60B74008F0CE4 /* LoginViewController.swift */,
+				18DBB0972BDA2EB500C52394 /* LoginError.swift */,
 				18E33B1C2BD8937B00296E38 /* UserRepository.swift */,
 				18E33B192BD892C000296E38 /* Model.xcdatamodeld */,
-				18FF96EB2BD60B74008F0CE4 /* Main.storyboard */,
 				18FF96EE2BD60B77008F0CE4 /* Assets.xcassets */,
 				18FF96F02BD60B77008F0CE4 /* LaunchScreen.storyboard */,
 				18FF96F32BD60B77008F0CE4 /* Info.plist */,
 			);
 			path = LoginStudy;
+			sourceTree = "<group>";
+		};
+		930DC0EC88E8816D81F80299 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91475CA898511D0419364985 /* libPods-LoginStudy.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5FAF75935F521E610B4275A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1063A75B0A232D91CC092C6 /* Pods-LoginStudy.debug.xcconfig */,
+				AA97AC8A0DE30C8B526D0AC7 /* Pods-LoginStudy.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +126,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18FF96F62BD60B77008F0CE4 /* Build configuration list for PBXNativeTarget "LoginStudy" */;
 			buildPhases = (
+				15A1DC8F13424620771968E6 /* [CP] Check Pods Manifest.lock */,
 				18FF96DE2BD60B74008F0CE4 /* Sources */,
 				18FF96DF2BD60B74008F0CE4 /* Frameworks */,
 				18FF96E02BD60B74008F0CE4 /* Resources */,
@@ -142,6 +186,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15A1DC8F13424620771968E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoginStudy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18FF96DE2BD60B74008F0CE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -153,6 +222,7 @@
 				18E33B1D2BD8937B00296E38 /* UserRepository.swift in Sources */,
 				18E33B1B2BD892C100296E38 /* Model.xcdatamodeld in Sources */,
 				18E33B212BD89A5700296E38 /* HomeViewController.swift in Sources */,
+				18DBB0982BDA2EB500C52394 /* LoginError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +364,7 @@
 		};
 		18FF96F72BD60B77008F0CE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1063A75B0A232D91CC092C6 /* Pods-LoginStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,6 +394,7 @@
 		};
 		18FF96F82BD60B77008F0CE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA97AC8A0DE30C8B526D0AC7 /* Pods-LoginStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
