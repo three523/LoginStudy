@@ -35,6 +35,7 @@
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>kakaokompassauth</string>
 		<string>naversearchapp</string>
 		<string>naversearchthirdlogin</string>
 	</array>

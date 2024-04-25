@@ -37,17 +37,16 @@ final class GoogleAuth: Auth {
         }
     }
     
+
     func logout() {
-        func logout() {
-            if GIDSignIn.sharedInstance.currentUser != nil {
-                GIDSignIn.sharedInstance.signOut()
-                print("구글 로그아웃")
+        if GIDSignIn.sharedInstance.currentUser != nil {
+            GIDSignIn.sharedInstance.signOut()
+            print("구글 로그아웃")
+        } else {
+            if let nextAuth {
+                nextAuth.logout()
             } else {
-                if let nextAuth {
-                    nextAuth.logout()
-                } else {
-                    print("로그인이 되어있지 않습니다.")
-                }
+                print("로그인이 되어있지 않습니다.")
             }
         }
     }
@@ -55,11 +54,26 @@ final class GoogleAuth: Auth {
     func fetchEmail(completion: ((Result<String, LoginError>) -> Void)?) {
         guard let user = GIDSignIn.sharedInstance.currentUser,
                 let email = user.profile?.email else {
-            print("사용자가 정보를 가져올 수 없습니다.")
-            completion?(.failure(.unknown))
+            print("사용자 정보를 가져올 수 없습니다.")
+            nextAuth?.fetchEmail(completion: completion)
             return
         }
         completion?(.success(email))
+    }
+    
+    func fetchName(completion: ((Result<String, LoginError>) -> Void)?) {
+        guard let user = GIDSignIn.sharedInstance.currentUser else {
+            print("사용자 정보를 가져올 수 없습니다.")
+            nextAuth?.fetchName(completion: completion)
+            return
+        }
+        guard let name = user.profile?.name else {
+            //TODO: 에러처리하기
+            print("구글 프로필정보를 가져오지 못함")
+            completion?(.failure(.unknown))
+            return
+        }
+        completion?(.success(name))
     }
     
     func fetchLoginState() -> Bool {

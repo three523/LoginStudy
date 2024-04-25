@@ -10,5 +10,6 @@ pod 'KakaoSDKTalk'  # 친구, 메시지(카카오톡)
 pod 'KakaoSDKCert' # 카카오톡 인증 서비스
 pod 'naveridlogin-sdk-ios'
 pod 'GoogleSignIn'
+pod 'SwiftJWT'
 
 end

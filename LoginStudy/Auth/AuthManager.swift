@@ -20,7 +20,7 @@ final class AuthManager {
     var updateLoginView: ((Bool) -> Void)?
     
     init(presenting: UIViewController) {
-        self.auth = KakaoAuth(auth: NaverAuth(auth: GoogleAuth(nextAuth: nil, presenting: presenting)))
+        self.auth = KakaoAuth(auth: NaverAuth(auth: GoogleAuth(nextAuth: AppleAuth(nextAuth: nil, viewController: presenting), presenting: presenting)))
     }
     
     func login(_ authType: AuthType, completion: ((Result<Bool,LoginError>) -> Void)?) {
@@ -51,6 +51,10 @@ final class AuthManager {
     
     func fetchEmail(completion: ((Result<String, LoginError>) -> Void)?) {
         auth.fetchEmail(completion: completion)
+    }
+    
+    func fetchName(completion: ((Result<String, LoginError>) -> Void)?) {
+        auth.fetchName(completion: completion)
     }
     
     func fetchLoginState() -> Bool {

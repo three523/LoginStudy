@@ -44,6 +44,14 @@ final class KakaoAuth: Auth {
         }
     }
     
+    func fetchName(completion: ((Result<String, LoginError>) -> Void)?) {
+        if AuthApi.hasToken() {
+            getUserName(completion: completion)
+        } else {
+            nextAuth?.fetchName(completion: completion)
+        }
+    }
+    
     func fetchLoginState() -> Bool {
         if AuthApi.hasToken() {
             return true
@@ -95,6 +103,7 @@ final class KakaoAuth: Auth {
         }
     }
     
+    // TODO: getUserInfo, getUserName 비슷한 메서드 합치기
     private func getUserInfo(completion: ((Result<String,LoginError>) -> Void)?) {
         UserApi.shared.me { user, error in
             if let error {
@@ -103,6 +112,22 @@ final class KakaoAuth: Auth {
             }
             if let email = user?.kakaoAccount?.email {
                 completion?(.success(email))
+            } else {
+                self.requestKakaoAgreement(completion: completion)
+            }
+        }
+    }
+    
+    private func getUserName(completion: ((Result<String,LoginError>) -> Void)?) {
+        UserApi.shared.me { user, error in
+            if let error {
+                completion?(.failure(.error(error)))
+                return
+            }
+            if let name = user?.kakaoAccount?.name {
+                completion?(.success(name))
+            } else if let nickName = user?.kakaoAccount?.profile?.nickname {
+                completion?(.success(nickName))
             } else {
                 self.requestKakaoAgreement(completion: completion)
             }

@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nGw-kv-17w">
-                                <rect key="frame" x="123.66666666666669" y="324.33333333333331" width="146" height="203.66666666666669"/>
+                                <rect key="frame" x="123.66666666666669" y="303" width="146" height="246"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmH-An-zwg">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="34.333333333333336"/>
@@ -59,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2H-GH-Ash">
-                                        <rect key="frame" x="0.0" y="42.333333333333371" width="146" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="42.333333333333314" width="146" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="네이버로 시작하기"/>
                                         <connections>
@@ -74,8 +74,16 @@
                                             <action selector="loginWithGoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hQf-7e-ApW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7u-Pe-rMe">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4W1-zO-KDp">
                                         <rect key="frame" x="0.0" y="126.99999999999999" width="146" height="34.333333333333329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="애플로 시작하기"/>
+                                        <connections>
+                                            <action selector="loginWithApple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GPd-85-ByF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7u-Pe-rMe">
+                                        <rect key="frame" x="0.0" y="169.33333333333331" width="146" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
                                         <connections>
@@ -83,31 +91,40 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilY-xB-xj7">
-                                        <rect key="frame" x="0.0" y="169.33333333333337" width="146" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="211.66666666666663" width="146" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="회원탈퇴">
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="deleteAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lkb-uH-adE"/>
-                                            <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C37-07-4JU"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인을 해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ0-jE-PdQ">
+                                <rect key="frame" x="135.66666666666666" y="163" width="121.99999999999997" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nGw-kv-17w" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DOU-kc-jBz"/>
                             <constraint firstItem="nGw-kv-17w" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hL9-9g-ssv"/>
+                            <constraint firstItem="rJ0-jE-PdQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="163" id="sjC-5i-veP"/>
+                            <constraint firstItem="rJ0-jE-PdQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zzO-tv-gDo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WjI-Qr-GfL"/>
                     <connections>
+                        <outlet property="appleLoginButton" destination="4W1-zO-KDp" id="RZB-1S-QqA"/>
                         <outlet property="deleteAccountButton" destination="ilY-xB-xj7" id="vuh-Ca-E9G"/>
                         <outlet property="googleLoginButton" destination="ljA-KX-C0z" id="3db-Jr-uFZ"/>
                         <outlet property="loginButton" destination="FmH-An-zwg" id="WVz-jz-LlT"/>
+                        <outlet property="loginMessageLabel" destination="rJ0-jE-PdQ" id="3Nj-qF-XgL"/>
                         <outlet property="loginStackView" destination="nGw-kv-17w" id="vQx-vY-WtY"/>
                         <outlet property="logoutButton" destination="f7u-Pe-rMe" id="FXB-4k-Lxw"/>
                         <outlet property="naverLoginButton" destination="Q2H-GH-Ash" id="JdX-K1-s1P"/>

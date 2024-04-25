@@ -17,6 +17,8 @@
 		18DBB0A92BDA63C300C52394 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0A82BDA63C300C52394 /* Secret.swift */; };
 		18DBB0AB2BDA92F100C52394 /* GoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0AA2BDA92F100C52394 /* GoogleAuth.swift */; };
 		18DBB0AD2BDA9A5900C52394 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0AC2BDA9A5900C52394 /* credentials.plist */; };
+		18DBB0AF2BDAA89D00C52394 /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0AE2BDAA89D00C52394 /* AppleAuth.swift */; };
+		18DBB0B22BDAB7B500C52394 /* AuthKey_NTG33SBKA5.p8 in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0B12BDAB7B500C52394 /* AuthKey_NTG33SBKA5.p8 */; };
 		18E33B1B2BD892C100296E38 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B192BD892C000296E38 /* Model.xcdatamodeld */; };
 		18E33B1D2BD8937B00296E38 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B1C2BD8937B00296E38 /* UserRepository.swift */; };
 		18E33B212BD89A5700296E38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E33B202BD89A5700296E38 /* HomeViewController.swift */; };
@@ -38,6 +40,9 @@
 		18DBB0A82BDA63C300C52394 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		18DBB0AA2BDA92F100C52394 /* GoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
 		18DBB0AC2BDA9A5900C52394 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		18DBB0AE2BDAA89D00C52394 /* AppleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuth.swift; sourceTree = "<group>"; };
+		18DBB0B02BDAA91400C52394 /* LoginStudy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoginStudy.entitlements; sourceTree = "<group>"; };
+		18DBB0B12BDAB7B500C52394 /* AuthKey_NTG33SBKA5.p8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AuthKey_NTG33SBKA5.p8; sourceTree = "<group>"; };
 		18E33B1A2BD892C100296E38 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18E33B1C2BD8937B00296E38 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		18E33B202BD89A5700296E38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -92,8 +97,16 @@
 				18DBB0AA2BDA92F100C52394 /* GoogleAuth.swift */,
 				18DBB0A02BDA3BE500C52394 /* KakaoAuth.swift */,
 				18DBB0A22BDA4ADA00C52394 /* NaverAuth.swift */,
+				18DBB0AE2BDAA89D00C52394 /* AppleAuth.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		18DBB0B62BDABDE800C52394 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		18FF96D92BD60B74008F0CE4 = {
@@ -117,6 +130,8 @@
 		18FF96E42BD60B74008F0CE4 /* LoginStudy */ = {
 			isa = PBXGroup;
 			children = (
+				18DBB0B02BDAA91400C52394 /* LoginStudy.entitlements */,
+				18DBB0B62BDABDE800C52394 /* Data */,
 				18DBB0992BDA3A4100C52394 /* Auth */,
 				18DBB0922BD9FABB00C52394 /* StoryBoard */,
 				18DBB0912BD9FA7800C52394 /* Screen */,
@@ -129,6 +144,7 @@
 				18FF96F02BD60B77008F0CE4 /* LaunchScreen.storyboard */,
 				18DBB0AC2BDA9A5900C52394 /* credentials.plist */,
 				18FF96F32BD60B77008F0CE4 /* Info.plist */,
+				18DBB0B12BDAB7B500C52394 /* AuthKey_NTG33SBKA5.p8 */,
 				18DBB0A82BDA63C300C52394 /* Secret.swift */,
 			);
 			path = LoginStudy;
@@ -214,6 +230,7 @@
 			files = (
 				18FF96F22BD60B77008F0CE4 /* LaunchScreen.storyboard in Resources */,
 				18FF96EF2BD60B77008F0CE4 /* Assets.xcassets in Resources */,
+				18DBB0B22BDAB7B500C52394 /* AuthKey_NTG33SBKA5.p8 in Resources */,
 				18FF96ED2BD60B74008F0CE4 /* Main.storyboard in Resources */,
 				18DBB0AD2BDA9A5900C52394 /* credentials.plist in Resources */,
 			);
@@ -290,6 +307,7 @@
 				18FF96E62BD60B74008F0CE4 /* AppDelegate.swift in Sources */,
 				18FF96E82BD60B74008F0CE4 /* SceneDelegate.swift in Sources */,
 				18DBB0AB2BDA92F100C52394 /* GoogleAuth.swift in Sources */,
+				18DBB0AF2BDAA89D00C52394 /* AppleAuth.swift in Sources */,
 				18DBB0A32BDA4ADA00C52394 /* NaverAuth.swift in Sources */,
 				18E33B1D2BD8937B00296E38 /* UserRepository.swift in Sources */,
 				18E33B1B2BD892C100296E38 /* Model.xcdatamodeld in Sources */,
@@ -444,9 +462,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LoginStudy/LoginStudy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2YK85BG576;
+				DEVELOPMENT_TEAM = 2FY7M8J988;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginStudy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -474,9 +493,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LoginStudy/LoginStudy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2YK85BG576;
+				DEVELOPMENT_TEAM = 2FY7M8J988;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginStudy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
