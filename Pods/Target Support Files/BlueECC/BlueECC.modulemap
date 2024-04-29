@@ -1,4 +1,4 @@
-module CryptorECC {
+framework module CryptorECC {
   umbrella header "BlueECC-umbrella.h"
 
   export *

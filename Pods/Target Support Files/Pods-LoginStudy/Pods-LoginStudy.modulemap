@@ -1,4 +1,4 @@
-module Pods_LoginStudy {
+framework module Pods_LoginStudy {
   umbrella header "Pods-LoginStudy-umbrella.h"
 
   export *

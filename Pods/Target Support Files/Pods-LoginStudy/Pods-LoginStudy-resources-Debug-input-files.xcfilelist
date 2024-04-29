@@ -1,3 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-LoginStudy/Pods-LoginStudy-resources.sh
-${PODS_CONFIGURATION_BUILD_DIR}/AppAuth/AppAuthCore_Privacy.bundle
-${PODS_CONFIGURATION_BUILD_DIR}/GoogleSignIn/GoogleSignIn.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/SwiftyBootpay/SwiftyBootpay.bundle

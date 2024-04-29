@@ -1,4 +1,4 @@
-module KakaoSDKCert {
+framework module KakaoSDKCert {
   umbrella header "KakaoSDKCert-umbrella.h"
 
   export *
