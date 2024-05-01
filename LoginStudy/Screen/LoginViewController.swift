@@ -18,12 +18,15 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var googleLoginButton: UIButton!
     @IBOutlet weak var appleLoginButton: UIButton!
     @IBOutlet weak var deleteAccountButton: UIButton!
+    @IBOutlet weak var presentItemListButton: UIButton!
     
     private lazy var authManager: AuthManager = AuthManager(presenting: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateButtonHidden(isLogin: authManager.fetchLoginState())
+        var isLogin = authManager.fetchLoginState()
+        initLoginForm(isLogin: isLogin)
+        updateButtonHidden(isLogin: isLogin)
     }
     
     @IBAction func login(_ sender: Any) {
@@ -56,6 +59,11 @@ final class LoginViewController: UIViewController {
             }
         }
     }
+    @IBAction func presentItemListViewController(_ sender: Any) {
+        let itemListStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let itemListViewController = itemListStoryboard.instantiateViewController(identifier: "ItemListViewController")
+        navigationController?.pushViewController(itemListViewController, animated: true)
+    }
     
     private func updateForm(result: Result<Bool, LoginError>) {
         switch result {
@@ -81,6 +89,26 @@ final class LoginViewController: UIViewController {
         }
     }
     
+    private func initLoginForm(isLogin: Bool) {
+        if isLogin {
+            authManager.fetchName { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let name):
+                        self.loginMessageLabel.text = "\(name)님을 환영합니다"
+                        self.updateButtonHidden(isLogin: true)
+                    case .failure(_):
+                        self.loginMessageLabel.text = "로그인을 해주세요"
+                        self.updateButtonHidden(isLogin: false)
+                    }
+                }
+            }
+        } else {
+            loginMessageLabel.text = "로그인을 해주세요"
+            updateButtonHidden(isLogin: false)
+        }
+    }
+    
     private func updateButtonHidden(isLogin: Bool) {
         DispatchQueue.main.async {
             self.loginButton.isHidden = isLogin
@@ -89,6 +117,7 @@ final class LoginViewController: UIViewController {
             self.appleLoginButton.isHidden = isLogin
             self.logoutButton.isHidden = !isLogin
             self.deleteAccountButton.isHidden = !isLogin
+            self.presentItemListButton.isHidden = !isLogin
         }
     }
     
