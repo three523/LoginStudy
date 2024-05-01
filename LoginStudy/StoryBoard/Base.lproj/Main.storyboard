@@ -468,6 +468,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="itemTitleLabel" destination="FkJ-Ov-9QH" id="KE3-CA-r6j"/>
                         <outlet property="myPointLabel" destination="aIh-Hp-Rsu" id="4A3-0V-LTC"/>
                         <outlet property="paymentPriceLabel" destination="tFU-Rn-o2n" id="15E-ca-WWI"/>
                         <outlet property="pointTextfield" destination="Ryx-GK-adW" id="249-M4-qcx"/>

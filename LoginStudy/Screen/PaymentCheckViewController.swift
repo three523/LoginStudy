@@ -8,6 +8,7 @@
 import UIKit
 
 final class PaymentCheckViewController: BottomSheetViewController {
+    @IBOutlet weak var itemTitleLabel: UILabel!
     @IBOutlet weak var myPointLabel: UILabel!
     @IBOutlet weak var pointTextfield: UITextField!
     @IBOutlet weak var paymentPriceLabel: UILabel!
@@ -15,6 +16,13 @@ final class PaymentCheckViewController: BottomSheetViewController {
     @IBOutlet weak var totalPaymentPriceLabel: UILabel!
     
     var pointManager: PointManager?
+    var itemName: String = "" {
+        didSet {
+            DispatchQueue.main.async {
+                self.itemTitleLabel.text = self.itemName
+            }
+        }
+    }
     var paymentPrice: Int = 0 {
         didSet {
             DispatchQueue.main.async {
@@ -100,7 +108,8 @@ extension PaymentCheckViewController: UITextFieldDelegate {
                 textField.text = "0"
             } else if let point = Int(text) {
                 if point > totalPoint {
-                    usingPoint = totalPoint
+                    let totalPrice = paymentPrice - totalPoint
+                    usingPoint = totalPrice < 0 ? totalPoint + totalPrice : totalPoint
                     textField.text = String(usingPoint)
                 } else {
                     usingPoint = point

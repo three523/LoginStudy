@@ -36,6 +36,11 @@ final class ItemDetailViewController: UIViewController {
         guard let paymentCheckViewController = paymentCheckStoryboard.instantiateViewController(identifier: "PaymentCheckViewController") as? PaymentCheckViewController else { return }
         paymentCheckViewController.modalPresentationStyle = .custom
         paymentCheckViewController.transitioningDelegate = self
+        guard let itemName = item?.name else {
+            print("item의 값을 찾을 수 없음")
+            return
+        }
+        paymentCheckViewController.itemName = itemName
         paymentCheckViewController.pointManager = pointManager
         paymentCheckViewController.paymentPrice = totalPrice
         paymentCheckViewController.presentingVCDismissAction = { [weak self] in
@@ -113,6 +118,6 @@ extension ItemDetailViewController: UITextFieldDelegate {
 
 extension ItemDetailViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return PresentationController(presentedViewController: presented, presenting: presenting, size: 0.5)
+        return PresentationController(presentedViewController: presented, presenting: presenting, size: 0.4)
     }
 }
