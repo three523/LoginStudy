@@ -10,7 +10,7 @@ import UIKit
 final class ItemListViewController: UIViewController {
     @IBOutlet weak var itemListTableView: UITableView!
     private var itemList: [Item] = [Item(image: UIImage(systemName: "pencil.line"), price: 500, name: "연필", description: "글을 쓰고 지울수 있습니다"), Item(image: UIImage(systemName: "eraser.fill"), price: 300, name: "지우개", description: "연필로 쓴 내용을 지울때 사용합니다")]
-    private var pointManager: PointManager = PointManager(userInfo: UserInfo(point: 1200))
+    private var pointManager: PointManager = PointManager(userInfo: UserInfo(point: 0))
     
     override func viewDidLoad() {
         super.viewDidLoad()

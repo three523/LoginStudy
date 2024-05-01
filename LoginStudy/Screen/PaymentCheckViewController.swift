@@ -78,7 +78,11 @@ final class PaymentCheckViewController: BottomSheetViewController {
         totalPaymentPrice = paymentPrice - usingPoint
     }
     @IBAction func payment(_ sender: Any) {
-        pointManager?.subtractPoint(usedPoint: usingPoint)
+        if usingPoint == 0 {
+            pointManager?.addPoint(price: totalPaymentPrice)
+        } else {
+            pointManager?.subtractPoint(usedPoint: usingPoint)
+        }
         presentingVCDismissAction?()
         dismiss(animated: true)
     }
@@ -87,7 +91,6 @@ final class PaymentCheckViewController: BottomSheetViewController {
 
 extension PaymentCheckViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print("replacement: \(string)")
         if string.isEmpty {
             guard let text = pointTextfield.text else { return false }
             if text.count <= 1 {
@@ -101,7 +104,6 @@ extension PaymentCheckViewController: UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        print("empty \(usingPointLabel.text!.isEmpty)\(pointTextfield.text!)")
         if let text = pointTextfield.text {
             if text.isEmpty {
                 usingPoint = 0
@@ -110,11 +112,11 @@ extension PaymentCheckViewController: UITextFieldDelegate {
                 if point > totalPoint {
                     let totalPrice = paymentPrice - totalPoint
                     usingPoint = totalPrice < 0 ? totalPoint + totalPrice : totalPoint
-                    textField.text = String(usingPoint)
                 } else {
-                    usingPoint = point
-                    textField.text = String(point)
+                    let totalPrice = paymentPrice - point
+                    usingPoint = totalPrice < 0 ? point + totalPrice : point
                 }
+                textField.text = String(usingPoint)
             }
         }
     }
