@@ -8,14 +8,31 @@
 import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
+import NaverThirdPartyLogin
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         KakaoSDK.initSDK(appKey: "a728f92d905deb3da2ecf5d1a9fccf16")
+        guard let instance = NaverThirdPartyLoginConnection.getSharedInstance() else { return true }
+        instance.isInAppOauthEnable = true
+        instance.isInAppOauthEnable = true
+        instance.isOnlyPortraitSupportedInIphone()
+        instance.serviceUrlScheme = NAVER_APPURLSCHEME
+        instance.consumerKey = NAVER_CLIENTID
+        instance.consumerSecret = NAVER_CLIENTSECRET
+        instance.appName = "LoginStudy"
+        
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if error != nil || user == nil {
+                  // Show the app's signed-out state.
+            } else {
+                  // Show the app's signed-in state.
+            }
+        }
+        
         return true
     }
 
@@ -31,6 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func application(
+      _ app: UIApplication,
+      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+      var handled: Bool
+
+      handled = GIDSignIn.sharedInstance.handle(url)
+      if handled {
+        return true
+      }
+      return false
     }
 
 }
