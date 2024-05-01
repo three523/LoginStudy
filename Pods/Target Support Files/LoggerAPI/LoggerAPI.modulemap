@@ -1,4 +1,4 @@
-module LoggerAPI {
+framework module LoggerAPI {
   umbrella header "LoggerAPI-umbrella.h"
 
   export *

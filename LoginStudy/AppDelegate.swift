@@ -10,6 +10,7 @@ import KakaoSDKCommon
 import KakaoSDKAuth
 import NaverThirdPartyLogin
 import GoogleSignIn
+import SwiftyBootpay
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        Bootpay.sharedInstance.appLaunch(application_id: BOOTPAY_KEY)
+
         return true
     }
 
@@ -61,6 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
       }
       return false
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        Bootpay.sharedInstance.sessionActive(active: false)
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        Bootpay.sharedInstance.sessionActive(active: true)
     }
 
 }

@@ -1,4 +1,4 @@
-module SwiftJWT {
+framework module SwiftJWT {
   umbrella header "SwiftJWT-umbrella.h"
 
   export *

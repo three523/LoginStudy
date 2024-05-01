@@ -1,4 +1,4 @@
-module CryptorRSA {
+framework module CryptorRSA {
   umbrella header "BlueRSA-umbrella.h"
 
   export *

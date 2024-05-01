@@ -2,8 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>GIDClientID</key>
-	<string>691146763222-phqklq1embrgldf9mbn1chj1iajg246i.apps.googleusercontent.com</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>생체인증 결제 긴행시 권한이 필요합니다.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -32,7 +37,19 @@
 				<string>com.googleusercontent.apps.691146763222-phqklq1embrgldf9mbn1chj1iajg246i</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>loginstudy_bootpay</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>loginstudy</string>
+			</array>
+		</dict>
 	</array>
+	<key>GIDClientID</key>
+	<string>691146763222-phqklq1embrgldf9mbn1chj1iajg246i.apps.googleusercontent.com</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaokompassauth</string>

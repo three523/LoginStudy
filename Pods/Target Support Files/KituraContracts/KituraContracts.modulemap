@@ -1,4 +1,4 @@
-module KituraContracts {
+framework module KituraContracts {
   umbrella header "KituraContracts-umbrella.h"
 
   export *

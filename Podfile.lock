@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.8.1)
+  - Alamofire (5.2.2)
   - AppAuth (1.7.5):
     - AppAuth/Core (= 1.7.5)
     - AppAuth/ExternalUserAgent (= 1.7.5)
@@ -9,46 +9,58 @@ PODS:
   - BlueCryptor (1.0.32)
   - BlueECC (1.2.5)
   - BlueRSA (1.0.200)
-  - GoogleSignIn (7.0.0):
-    - AppAuth (~> 1.5)
-    - GTMAppAuth (< 3.0, >= 1.3)
-    - GTMSessionFetcher/Core (< 4.0, >= 1.1)
-  - GTMAppAuth (2.0.0):
-    - AppAuth/Core (~> 1.6)
-    - GTMSessionFetcher/Core (< 4.0, >= 1.5)
-  - GTMSessionFetcher/Core (3.2.0)
-  - KakaoSDKAuth (2.20.0):
-    - KakaoSDKCommon (= 2.20.0)
-  - KakaoSDKCert (2.20.0):
-    - KakaoSDKCertCore (= 2.20.0)
-    - KakaoSDKUser (= 2.20.0)
-  - KakaoSDKCertCore (2.20.0)
-  - KakaoSDKCommon (2.20.0):
-    - KakaoSDKCommon/Common (= 2.20.0)
-    - KakaoSDKCommon/Network (= 2.20.0)
-  - KakaoSDKCommon/Common (2.20.0)
-  - KakaoSDKCommon/Network (2.20.0):
+  - CryptoSwift (1.8.2)
+  - GoogleSignIn (7.1.0):
+    - AppAuth (< 2.0, >= 1.7.3)
+    - GTMAppAuth (< 5.0, >= 4.1.1)
+    - GTMSessionFetcher/Core (~> 3.3)
+  - GTMAppAuth (4.1.1):
+    - AppAuth/Core (~> 1.7)
+    - GTMSessionFetcher/Core (< 4.0, >= 3.3)
+  - GTMSessionFetcher/Core (3.4.1)
+  - JGProgressHUD (2.2)
+  - KakaoSDKAuth (2.21.1):
+    - KakaoSDKCommon (= 2.21.1)
+  - KakaoSDKCert (2.21.1):
+    - KakaoSDKCertCore (= 2.21.1)
+    - KakaoSDKUser (= 2.21.1)
+  - KakaoSDKCertCore (2.21.1)
+  - KakaoSDKCommon (2.21.1):
+    - KakaoSDKCommon/Common (= 2.21.1)
+    - KakaoSDKCommon/Network (= 2.21.1)
+  - KakaoSDKCommon/Common (2.21.1)
+  - KakaoSDKCommon/Network (2.21.1):
     - Alamofire (~> 5.1)
-    - KakaoSDKCommon/Common (= 2.20.0)
-  - KakaoSDKTalk (2.20.0):
-    - KakaoSDKTemplate (= 2.20.0)
-    - KakaoSDKUser (= 2.20.0)
-  - KakaoSDKTemplate (2.20.0):
-    - KakaoSDKCommon/Common (= 2.20.0)
-  - KakaoSDKUser (2.20.0):
-    - KakaoSDKAuth (= 2.20.0)
+    - KakaoSDKCommon/Common (= 2.21.1)
+  - KakaoSDKTalk (2.21.1):
+    - KakaoSDKTemplate (= 2.21.1)
+    - KakaoSDKUser (= 2.21.1)
+  - KakaoSDKTemplate (2.21.1):
+    - KakaoSDKCommon/Common (= 2.21.1)
+  - KakaoSDKUser (2.21.1):
+    - KakaoSDKAuth (= 2.21.1)
   - KituraContracts (1.2.1):
     - LoggerAPI (~> 1.7)
   - LoggerAPI (1.9.200):
     - Logging (~> 1.1)
   - Logging (1.4.0)
   - naveridlogin-sdk-ios (4.2.1)
+  - ObjectMapper (4.4.2)
+  - SnapKit (5.0.1)
   - SwiftJWT (3.6.200):
     - BlueCryptor (~> 1.0)
     - BlueECC (~> 1.1)
     - BlueRSA (~> 1.0)
     - KituraContracts (~> 1.2)
     - LoggerAPI (~> 1.7)
+  - SwiftOTP (3.0.0)
+  - SwiftyBootpay (3.3.833):
+    - Alamofire (~> 5.2.2)
+    - CryptoSwift
+    - JGProgressHUD
+    - ObjectMapper
+    - SnapKit (~> 5.0.0)
+    - SwiftOTP
 
 DEPENDENCIES:
   - GoogleSignIn
@@ -59,6 +71,7 @@ DEPENDENCIES:
   - KakaoSDKUser
   - naveridlogin-sdk-ios
   - SwiftJWT
+  - SwiftyBootpay (~> 3.3.9)
 
 SPEC REPOS:
   trunk:
@@ -67,9 +80,11 @@ SPEC REPOS:
     - BlueCryptor
     - BlueECC
     - BlueRSA
+    - CryptoSwift
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - JGProgressHUD
     - KakaoSDKAuth
     - KakaoSDKCert
     - KakaoSDKCertCore
@@ -81,30 +96,40 @@ SPEC REPOS:
     - LoggerAPI
     - Logging
     - naveridlogin-sdk-ios
+    - ObjectMapper
+    - SnapKit
     - SwiftJWT
+    - SwiftOTP
+    - SwiftyBootpay
 
 SPEC CHECKSUMS:
-  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   AppAuth: 501c04eda8a8d11f179dbe8637b7a91bb7e5d2fa
   BlueCryptor: b0aee3d9b8f367b49b30de11cda90e1735571c24
   BlueECC: 0d18e93347d3ec6d41416de21c1ffa4d4cd3c2cc
   BlueRSA: dfeef51db96bcc4edec654956c1581adbda4e6a3
-  GoogleSignIn: b232380cf495a429b8095d3178a8d5855b42e842
-  GTMAppAuth: 99fb010047ba3973b7026e45393f51f27ab965ae
-  GTMSessionFetcher: 41b9ef0b4c08a6db4b7eb51a21ae5183ec99a2c8
-  KakaoSDKAuth: 02742f4681af6da8c4aa7b0f71df98ca9e7df834
-  KakaoSDKCert: 0b27ec4edbc9e5ee689ae568ac5be6956b96ce4d
-  KakaoSDKCertCore: 5ebd4da00140178b4fb7ad30c317cfe5fe8c02ba
-  KakaoSDKCommon: 060a8085733a215a048f9bf9b39a846d1be1daee
-  KakaoSDKTalk: 245db634d63f8a21e8b80bcfe5ca1aff407b1018
-  KakaoSDKTemplate: d0481c3d8a7e74646a585fc0e551fc18f7fdc6ac
-  KakaoSDKUser: 0594b37675fb634304da3ecc83830c0ec84ceef5
+  CryptoSwift: c63a805d8bb5e5538e88af4e44bb537776af11ea
+  GoogleSignIn: d4281ab6cf21542b1cfaff85c191f230b399d2db
+  GTMAppAuth: f69bd07d68cd3b766125f7e072c45d7340dea0de
+  GTMSessionFetcher: 8000756fc1c19d2e5697b90311f7832d2e33f6cd
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  KakaoSDKAuth: 28343159dd60ee9bbb61ff25d45d9769fcef6b8c
+  KakaoSDKCert: 05def2d8d5e1d1abc35a900a6dbf6de652b42f58
+  KakaoSDKCertCore: f8e07aa4ec5201399a09bf4e65ffd08e5dd45ced
+  KakaoSDKCommon: 7938fce8e5ba3e73490f1928e55b20b510a0685b
+  KakaoSDKTalk: fba042148bf9dad0590a6ab7f175e2fe895fd488
+  KakaoSDKTemplate: 4458958285d9fc97dff1483184b6f810a938a249
+  KakaoSDKUser: 35608bb49bbc644f507561d8b8a33dec1c5eb360
   KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
   LoggerAPI: ad9c4a6f1e32f518fdb43a1347ac14d765ab5e3d
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
   naveridlogin-sdk-ios: d5f9d92905a7e964976ebfdd665bee5fb75845c5
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftJWT: 88c412708f58c169d431d344c87bc79a87c830ae
+  SwiftOTP: ec3848f12a4541f29d96f6a0fe63dcbb8448d96f
+  SwiftyBootpay: 5313189ecd6ae8f46132b48ff78060daeaa724ca
 
-PODFILE CHECKSUM: 6d03bb704ad4e01a0260463982563bc6d209bc0c
+PODFILE CHECKSUM: 6af3316036537542f2b1d865e5ea99dcbd2f84f4
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2

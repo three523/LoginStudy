@@ -1,4 +1,4 @@
-module Cryptor {
+framework module Cryptor {
   umbrella header "BlueCryptor-umbrella.h"
 
   export *
