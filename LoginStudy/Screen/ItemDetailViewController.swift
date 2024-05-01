@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ItemDetailViewController: UIViewController {
+final class ItemDetailViewController: UIViewController {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemTItleLabel: UILabel!
     @IBOutlet weak var itemDescriptionLabel: UILabel!
@@ -15,6 +15,8 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     
     var item: Item? = nil
+    private var totalPrice: Int = 0
+    var pointManager: PointManager? = PointManager(userInfo: UserInfo(point: 1200))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,23 @@ class ItemDetailViewController: UIViewController {
     
     private func setupTextField() {
         itemCountTextField.delegate = self
+    }
+    @IBAction func payment(_ sender: Any) {
+        let paymentCheckStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let paymentCheckViewController = paymentCheckStoryboard.instantiateViewController(identifier: "PaymentCheckViewController") as? PaymentCheckViewController else { return }
+        paymentCheckViewController.modalPresentationStyle = .custom
+        paymentCheckViewController.transitioningDelegate = self
+        guard let itemName = item?.name else {
+            print("item의 값을 찾을 수 없음")
+            return
+        }
+        paymentCheckViewController.itemName = itemName
+        paymentCheckViewController.pointManager = pointManager
+        paymentCheckViewController.paymentPrice = totalPrice
+        paymentCheckViewController.presentingVCDismissAction = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        present(paymentCheckViewController, animated: true)
     }
     
     @IBAction func subtractItemCount(_ sender: Any) {
@@ -51,9 +70,11 @@ class ItemDetailViewController: UIViewController {
         guard let itemCountText = itemCountTextField.text,
               let itemCount = Int(itemCountText),
               let price = item?.price else { return }
+        let totalPrice = itemCount * price
         DispatchQueue.main.async {
-            self.totalPriceLabel.text = "\(itemCount * price)원"
+            self.totalPriceLabel.text = "\(totalPrice)원"
         }
+        self.totalPrice = totalPrice
     }
     
     func updateView(item: Item) {
@@ -92,5 +113,11 @@ extension ItemDetailViewController: UITextFieldDelegate {
             }
         }
         updateTotalPrice()
+    }
+}
+
+extension ItemDetailViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return PresentationController(presentedViewController: presented, presenting: presenting, size: 0.4)
     }
 }
