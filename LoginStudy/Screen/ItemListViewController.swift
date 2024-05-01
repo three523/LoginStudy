@@ -9,6 +9,7 @@ import UIKit
 
 class ItemListViewController: UIViewController {
     @IBOutlet weak var itemListTableView: UITableView!
+    private var itemList: [Item] = [Item(image: UIImage(systemName: "pencil.line"), price: 500, name: "연필", description: "글을 쓰고 지울수 있습니다"), Item(image: UIImage(systemName: "eraser.fill"), price: 300, name: "지우개", description: "연필로 쓴 내용을 지울때 사용합니다")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class ItemListViewController: UIViewController {
 
 extension ItemListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return itemList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,16 +34,18 @@ extension ItemListViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.itemImageView = UIImageView(image: UIImage(systemName: "person"))
-        cell.itemTitleLable.text = "제목"
-        cell.itemPriceLable.text = "12,000원"
+        let item = itemList[indexPath.row]
+        
+        cell.itemImageView.image = item.image
+        cell.itemTitleLable.text = item.name
+        cell.itemPriceLable.text = "\(item.price)원"
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let itemListStoryboard = UIStoryboard(name: "Main", bundle: nil)
         guard let itemListViewController = itemListStoryboard.instantiateViewController(identifier: "ItemDetailViewController") as? ItemDetailViewController else { return }
-        itemListViewController.price = 12000
+        itemListViewController.item = itemList[indexPath.row]
         navigationController?.pushViewController(itemListViewController, animated: true)
     }
 }
