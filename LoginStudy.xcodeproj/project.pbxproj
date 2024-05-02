@@ -11,7 +11,7 @@
 		1824EA3F2BE1D18500C421EA /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824EA3E2BE1D18500C421EA /* ItemDetailViewController.swift */; };
 		1824EA412BE1DDCA00C421EA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824EA402BE1DDCA00C421EA /* Item.swift */; };
 		1824EA452BE1E72200C421EA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824EA442BE1E72200C421EA /* UserInfo.swift */; };
-		1824EA472BE1E93900C421EA /* PaymentCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824EA462BE1E93900C421EA /* PaymentCheckViewController.swift */; };
+		18C548172BE38F5D001DD21F /* PaymentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C548162BE38F5C001DD21F /* PaymentManager.swift */; };
 		18D10C8F2BE2C2E3005214E4 /* PointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D10C8E2BE2C2E3005214E4 /* PointManager.swift */; };
 		18D10C912BE2CBC4005214E4 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D10C902BE2CBC4005214E4 /* PresentationController.swift */; };
 		18DBB0982BDA2EB500C52394 /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0972BDA2EB500C52394 /* LoginError.swift */; };
@@ -45,7 +45,7 @@
 		1824EA3E2BE1D18500C421EA /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		1824EA402BE1DDCA00C421EA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Item.swift; path = LoginStudy/Screen/Item.swift; sourceTree = SOURCE_ROOT; };
 		1824EA442BE1E72200C421EA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = LoginStudy/UserInfo.swift; sourceTree = SOURCE_ROOT; };
-		1824EA462BE1E93900C421EA /* PaymentCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCheckViewController.swift; sourceTree = "<group>"; };
+		18C548162BE38F5C001DD21F /* PaymentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentManager.swift; sourceTree = "<group>"; };
 		18D10C8E2BE2C2E3005214E4 /* PointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointManager.swift; sourceTree = "<group>"; };
 		18D10C902BE2CBC4005214E4 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		18DBB0972BDA2EB500C52394 /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
@@ -101,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				18E33B202BD89A5700296E38 /* HomeViewController.swift */,
-				1824EA462BE1E93900C421EA /* PaymentCheckViewController.swift */,
 				18FF96E92BD60B74008F0CE4 /* LoginViewController.swift */,
 				18E2CFBA2BE1C50E00BFC97D /* ItemListViewController.swift */,
 				1824EA3E2BE1D18500C421EA /* ItemDetailViewController.swift */,
@@ -162,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				18DBB0B02BDAA91400C52394 /* LoginStudy.entitlements */,
+				18C548162BE38F5C001DD21F /* PaymentManager.swift */,
 				18D10C8E2BE2C2E3005214E4 /* PointManager.swift */,
 				1824EA3B2BE1CF3D00C421EA /* View */,
 				18DBB0B62BDABDE800C52394 /* Data */,
@@ -345,7 +345,6 @@
 				1824EA3D2BE1CF5300C421EA /* ItemTableViewCell.swift in Sources */,
 				18DBB0AB2BDA92F100C52394 /* GoogleAuth.swift in Sources */,
 				18DBB0AF2BDAA89D00C52394 /* AppleAuth.swift in Sources */,
-				1824EA472BE1E93900C421EA /* PaymentCheckViewController.swift in Sources */,
 				18DBB0A32BDA4ADA00C52394 /* NaverAuth.swift in Sources */,
 				18E33B1D2BD8937B00296E38 /* UserRepository.swift in Sources */,
 				18D10C8F2BE2C2E3005214E4 /* PointManager.swift in Sources */,
@@ -358,6 +357,7 @@
 				18DBB0A92BDA63C300C52394 /* Secret.swift in Sources */,
 				18DBB0982BDA2EB500C52394 /* LoginError.swift in Sources */,
 				18DBB09B2BDA3A4900C52394 /* Auth.swift in Sources */,
+				18C548172BE38F5D001DD21F /* PaymentManager.swift in Sources */,
 				1824EA452BE1E72200C421EA /* UserInfo.swift in Sources */,
 				18DBB09F2BDA3B9200C52394 /* AuthManager.swift in Sources */,
 				18D10C912BE2CBC4005214E4 /* PresentationController.swift in Sources */,
